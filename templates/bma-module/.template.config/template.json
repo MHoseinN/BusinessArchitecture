@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "BusinessArchitecture",
+  "identity": "BusinessArchitecture.Module",
+  "name": "Business Module Template",
+  "shortName": "bma-module",
+  "sourceName": "SampleModule",
+  "preferNameDirectory": true,
+  "symbols": {
+    "rootNamespace": {"type":"parameter","datatype":"text","defaultValue":"BusinessTemplate"},
+    "databaseSchema": {"type":"parameter","datatype":"text","defaultValue":"samplemodule"},
+    "includeTests": {"type":"parameter","datatype":"bool","defaultValue":"true"},
+    "includeOutbox": {"type":"parameter","datatype":"bool","defaultValue":"true"}
+  }
+}
