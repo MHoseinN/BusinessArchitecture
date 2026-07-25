@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-test-template:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - run: dotnet restore BusinessTemplate/BusinessTemplate.slnx
+      - run: dotnet build BusinessTemplate/BusinessTemplate.slnx --configuration Release --no-restore
+      - run: dotnet test BusinessTemplate/BusinessTemplate.slnx --configuration Release --no-build
+
+      - run: dotnet pack BusinessArchitecture.Templates.csproj --configuration Release --output artifacts
+
+      - run: |
+          dotnet new uninstall BusinessArchitecture.Templates || true
+          dotnet new install artifacts/BusinessArchitecture.Templates.1.0.0.nupkg
+
+      - run: |
+          rm -rf /tmp/SampleBusiness
+          dotnet new bma -n SampleBusiness -o /tmp/SampleBusiness
+          dotnet restore /tmp/SampleBusiness/BusinessTemplate.slnx
+          dotnet build /tmp/SampleBusiness/BusinessTemplate.slnx --configuration Release
+          dotnet test /tmp/SampleBusiness/BusinessTemplate.slnx --configuration Release
+
+      - run: |
+          dotnet new bma-module -n Billing --rootNamespace SampleBusiness -o /tmp/SampleBusiness/src/Modules/Billing/BusinessTemplate.Modules.Billing
+          dotnet new bma-command -n CreateInvoice --module Billing --entity Invoice --rootNamespace SampleBusiness -o /tmp/SampleBusiness/src/Modules/Billing/BusinessTemplate.Modules.Billing/Features/CreateInvoice
+          dotnet new bma-query -n GetInvoiceById --module Billing --entity Invoice --rootNamespace SampleBusiness -o /tmp/SampleBusiness/src/Modules/Billing/BusinessTemplate.Modules.Billing/Features/GetInvoiceById
+          dotnet restore /tmp/SampleBusiness/BusinessTemplate.slnx
+          dotnet build /tmp/SampleBusiness/BusinessTemplate.slnx --configuration Release

@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BusinessTemplate.Host/BusinessTemplate.Host.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/BusinessTemplate.BuildingBlocks.Application/BusinessTemplate.BuildingBlocks.Application.csproj" />
+    <Project Path="src/BuildingBlocks/BusinessTemplate.BuildingBlocks.Contracts/BusinessTemplate.BuildingBlocks.Contracts.csproj" />
+    <Project Path="src/BuildingBlocks/BusinessTemplate.BuildingBlocks.Domain/BusinessTemplate.BuildingBlocks.Domain.csproj" />
+    <Project Path="src/BuildingBlocks/BusinessTemplate.BuildingBlocks.Infrastructure/BusinessTemplate.BuildingBlocks.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Identity/">
+    <Project Path="src/Modules/Identity/BusinessTemplate.Modules.Identity/BusinessTemplate.Modules.Identity.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BusinessTemplate.ArchitectureTests/BusinessTemplate.ArchitectureTests.csproj" />
+    <Project Path="tests/BusinessTemplate.IntegrationTests/BusinessTemplate.IntegrationTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Modules/" />
+  <Folder Name="/tests/Modules/Identity/">
+    <Project Path="tests/Modules/Identity/BusinessTemplate.Modules.Identity.Tests/BusinessTemplate.Modules.Identity.Tests.csproj" />
+  </Folder>
+</Solution>

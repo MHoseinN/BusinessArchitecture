@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../BuildingBlocks/BusinessTemplate.BuildingBlocks.Application/BusinessTemplate.BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="../../../BuildingBlocks/BusinessTemplate.BuildingBlocks.Contracts/BusinessTemplate.BuildingBlocks.Contracts.csproj" />
+    <ProjectReference Include="../../../BuildingBlocks/BusinessTemplate.BuildingBlocks.Domain/BusinessTemplate.BuildingBlocks.Domain.csproj" />
+    <ProjectReference Include="../../../BuildingBlocks/BusinessTemplate.BuildingBlocks.Infrastructure/BusinessTemplate.BuildingBlocks.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FastEndpoints" />
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="BCrypt.Net-Next" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" />
+  </ItemGroup>
+</Project>

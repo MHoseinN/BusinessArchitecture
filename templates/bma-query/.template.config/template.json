@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "BusinessArchitecture",
+  "identity": "BusinessArchitecture.Query",
+  "name": "Business Query Feature Template",
+  "shortName": "bma-query",
+  "sourceName": "SampleQuery",
+  "preferNameDirectory": true,
+  "symbols": {
+    "module": {"type":"parameter","datatype":"text","defaultValue":"SampleModule"},
+    "entity": {"type":"parameter","datatype":"text","defaultValue":"SampleEntity"},
+    "rootNamespace": {"type":"parameter","datatype":"text","defaultValue":"BusinessTemplate"}
+  }
+}
